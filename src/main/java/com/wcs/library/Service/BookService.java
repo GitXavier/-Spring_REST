@@ -46,7 +46,7 @@ public class BookService {
     }
 
     public List<Book> searchBook(@RequestBody Map<String, String> search) {
-        String searchData = search.get("search");
+        String searchData = search.get("text");
 
         return bookRepository.findByTitleContainingOrDescriptionContaining(searchData, searchData);
     }
